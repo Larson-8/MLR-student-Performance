@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Performance</title>
+
+    <style>
+        *{
+            margin:0;
+            padding:0;
+            box-sizing:border-box;
+            font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body{
+            height:100vh;
+            display:flex;
+            justify-content:center;
+            align-items:center;
+            background:linear-gradient(135deg,#667eea,#764ba2);
+        }
+
+        .container{
+            width:400px;
+            padding:40px;
+            text-align:center;
+            background:rgba(255,255,255,0.15);
+            backdrop-filter:blur(10px);
+            border-radius:20px;
+            box-shadow:0 8px 32px rgba(0,0,0,0.2);
+            color:white;
+        }
+
+        .container h1{
+            margin-bottom:25px;
+            font-size:32px;
+            font-weight:bold;
+        }
+
+        .container p{
+            margin-bottom:20px;
+            color:#f1f1f1;
+        }
+
+        input{
+            width:100%;
+            padding:12px;
+            margin:10px 0;
+            border:none;
+            border-radius:10px;
+            outline:none;
+            font-size:16px;
+        }
+
+        button{
+            width:100%;
+            padding:12px;
+            margin-top:15px;
+            border:none;
+            border-radius:10px;
+            background:#00c853;
+            color:white;
+            font-size:18px;
+            font-weight:bold;
+            cursor:pointer;
+            transition:0.3s;
+        }
+
+        button:hover{
+            background:#00a844;
+            transform:translateY(-2px);
+        }
+
+        .result{
+            margin-top:25px;
+            padding:15px;
+            background:rgba(255,255,255,0.2);
+            border-radius:10px;
+        }
+
+        .result h3{
+            color:#ffffff;
+            font-size:22px;
+        }
+
+        .icon{
+            font-size:50px;
+            margin-bottom:15px;
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="container">
+
+    <div class="icon">📈</div>
+
+    <h1>Profit Prediction</h1>
+
+    <p>Enter the required details to predict profit</p>
+
+    <form action="/predict" method="POST">
+
+        <input type="text" name="Hours spend" placeholder="Enter Hours spend">
+        <input type="text" name="Previous score" placeholder="Enter Previous_score">
+        <input type="text" name="Extracurricular Activities" placeholder="Enter Extracurricular Activities">
+        <input type="text" name="sleep hours" placeholder="sleep hours">
+        <input type="text" name="practised questions" placeholder="practised questions">
+
+        <button type="submit">Submit</button>
+
+    </form>
+
+    <div class="result">
+        <h3>{{ prediction_text }}</h3>
+    </div>
+
+</div>
+
+</body>
+</html>
